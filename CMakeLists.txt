@@ -26,7 +26,7 @@ option(BUILD_SHARED "Builds the library as shared library" OFF)
 option(BUILD_FRAMEWORK "Builds the library as an apple Framework" OFF)
 option(BUILD_UNIVERSAL "Builds the shared or framework as a universal (fat, 32- & 64-bit) binary" ON)
 option(BUILD_OSX_I386 "Builds the shared or framework as a 32-bit binary, even on a 64-bit platform" OFF)
-option(USE_LIBCXX "Uses libc++ instead of libstdc++" ON)
+option(USE_LIBCXX "Uses libc++ instead of libstdc++" OFF)
 option(USE_CUSTOM_LIBCXX "Uses a custom libc++" OFF)
 
 add_definitions( -DVR_API_PUBLIC )
@@ -75,7 +75,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin/${PLATFORM_NA
 # Enable some properties.
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
 	# Enable c++11 and hide symbols which shouldn't be visible
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC -fvisibility=hidden")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -fPIC -fvisibility=hidden")
 
 	# Set custom libc++ usage here
 	if(CMAKE_C_COMPILER_ID MATCHES "Clang" AND USE_LIBCXX)
