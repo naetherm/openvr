@@ -1,5 +1,5 @@
 //========= Copyright Valve Corporation ============//
-#include <vrcore/strtools_public.h>
+#include <vrcommon/strtools_public.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,10 +9,12 @@
 #include <functional>
 #include <locale>
 #include <codecvt>
-#include <vrcore/assert.h>
+#include <vrcommon/vrassert.h>
 
 #if defined( _WIN32 )
 #include <windows.h>
+#elif defined( LINUX )
+#include <stdarg.h>
 #endif
 
 #if defined( OSX ) || defined( LINUX )
