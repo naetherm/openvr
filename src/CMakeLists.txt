@@ -105,12 +105,12 @@ install(TARGETS ${LIBNAME} DESTINATION lib)
 install(FILES ${PUBLIC_HEADER_FILES} DESTINATION include/openvr)
 
 # Generate a .pc file for linux environments
-if(PLATFORM_NAME MATCHES "linux")
-    set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
-    CONFIGURE_FILE("openvr.pc.in" "openvr.pc" @ONLY)
-
-    set(OPENVR_PC ${CMAKE_CURRENT_BINARY_DIR}/openvr.pc)
-    if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
-        install(FILES ${OPENVR_PC} DESTINATION "${INSTALL_PKGCONFIG_DIR}")
-    endif()
-endif()
+#if(PLATFORM_NAME MATCHES "linux")
+#    set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
+#    CONFIGURE_FILE("openvr.pc.in" "openvr.pc" @ONLY)
+#
+#    set(OPENVR_PC ${CMAKE_CURRENT_BINARY_DIR}/openvr.pc)
+#    if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
+#        install(FILES ${OPENVR_PC} DESTINATION "${INSTALL_PKGCONFIG_DIR}")
+#    endif()
+#endif()
